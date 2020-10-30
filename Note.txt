@@ -1,3 +1,5 @@
+Make sure that connection string in webconfig is valid
+
 Use this command to migrate database in package console
 
 EntityFramework6\update-database
