@@ -1,0 +1,140 @@
+﻿@*@model WideHorizons.Models.UserWideHorizons
+
+@{
+    Layout = "~/Areas/HR/Views/Shared/_LayoutHR.cshtml";
+    var UserInAction = (WideHorizons.process.UserOnLine)Session["User"];
+    var listDepartmentId = (SelectList)ViewBag.DepartmentID;
+    var listEmployeeType = (SelectList)ViewBag.EmployeeTypeId;
+}
+
+@if (UserInAction.ActionIsView && UserInAction.ActionIsAdd)
+{ 
+    <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"> 
+                        <div class="card">
+                            <div class="header">
+                                <h2>Add New</h2>
+                            </div>
+                            <div class="body"><div class="card"><div class="body">
+                                
+                                <div class="row clearfix">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Todo title</label>
+                                            <div class="form-line">
+                                                <input class="form-control" data-val="true" data-val-required="*" id="Name" name="Name" type="text" value="" placeholder="Todo title">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Name Arabic</label>
+                                            <div class="form-line">
+                                                <input class="form-control" data-val="true" data-val-required="*" id="NameAr" name="NameAr" type="text" value="" placeholder="Name Arabic">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Employee Type</label>
+                                            <select id="EmployeeTypeId" name="EmployeeTypeId" class="form-control show-tick" tabindex="-98" data-live-search="true">
+                                                <option value="">Select</option>
+                                                @foreach (var item in listEmployeeType)
+                                                {
+                                                    <option value="@item.Value" selected="@item.Selected">@item.Text</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Email</label>
+                                            <div class="form-line">
+                                                <input class="form-control" data-val="true" data-val-required="*" id="email" name="Name" type="email" value="" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Password</label>
+                                            <div class="form-line">
+                                                <input class="form-control" data-val="true" data-val-required="*" id="Password" name="Password" type="text" value="" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Department</label>
+                                            <select id="DepartmentID" name="DepartmentID" class="form-control show-tick" tabindex="-98" data-live-search="true">
+                                                <option value="">Select</option>
+                                                @foreach (var item in listDepartmentId)
+                                                {
+
+                                                    <option value="@item.Value" selected="@item.Selected">@item.Text</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Gender</label>
+                                            <div class="demo-switch">
+                                                <div class="demo-radio-button">
+                                                    <input name="group1" type="radio" id="radio_1" checked class="with-gap radio-col-teal" />
+                                                    <label for="radio_1">Male</label>
+                                                    <input name="group1" type="radio" id="radio_2" class="with-gap radio-col-teal" />
+                                                    <label for="radio_2">Female</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Activation User</label>
+                                            <div class="demo-switch">
+                                                <div class="switch">
+                                                    <label>
+                                                        Inactive
+                                                        <input type="checkbox" checked><span class="lever"></span>Active</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="body">
+                                    <button id="Save" type="submit" class="btn btn-primary">Add User</button>
+                                </div>
+                            </div>
+                            
+                                </div></div>
+
+                        </div>
+                
+            </div>
+        </div>
+    </div>
+
+ 
+
+
+
+}
+
+@section ScriptDatatable{
+    <script>
+        $(document).ready(function () {
+         
+
+        })
+    </script>
+}*@
+

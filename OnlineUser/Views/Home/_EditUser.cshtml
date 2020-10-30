@@ -1,0 +1,55 @@
+﻿ 
+
+@model OnlineUser.Models.Todo
+@{
+    var Date =  Model.Date.ToString("dd/MM/yyyy");
+   
+      
+
+
+}
+ 
+ 
+
+    
+        <div class="body">
+            <div class="card">
+
+                <div class="body">
+                    <div class="row clearfix">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Todo title</label>
+                                <div class="form-line">
+                                    <input class="form-control" data-val="true" data-val-required="*" id="EditUserName" name="EditUserName" type="text" value="@Model.Title" placeholder="Name">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+
+                   
+                    <div class="row clearfix">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">Due date</label>
+                                <div class="form-line">
+                                    <input class="form-control datetimepicker" id="EditTrainingDate" name="EditTrainingDate" type="text" value="@Date" placeholder="Due date">
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                  
+
+                    <div class="modal-footer">
+                        <button id="EditSave" value="@Model.ID" type="submit"  class="btn btn-success">Save Edit </button>
+
+                        <button type="button" id="EditClose" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+ 

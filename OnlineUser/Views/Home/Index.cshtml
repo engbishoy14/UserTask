@@ -1,0 +1,142 @@
+﻿
+@model IEnumerable<OnlineUser.Models.Todo>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+
+}
+
+@section StyleDatatable{
+    <!-- JQuery DataTable Css -->
+    <link href="~/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <style type="text/css">
+        tbody tr th {
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        .customimg {
+            max-height: 100px;
+            max-width: 200px;
+        }
+    </style>
+
+}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>ToDos List  </h2>
+            </div>
+            <div class="body">
+                <div class="card">
+                    <div class="body">
+                        <div class="row clearfix">
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div>
+
+                                        <button type="button" id="Addnew" data-toggle='modal' data-target='#defaultModal' class="btn btn-primary" title="Add New User">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="DivShowUser" class="body">
+                @Html.Partial("_index", Model)
+            </div>
+
+            <div class="body">
+                <!-- Edit User or Details of user -->
+                <div class="modal fade" id="EditUserModal" tabindex="-1" role="dialog">
+                    <div class="modal-lg col-md-offset-2" role="document">
+                        <div class="modal-content" id="DivEditUser">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+                <div class="modal-lg col-md-offset-2" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="defaultModalLabel">Add New</h4>
+                        </div>
+                        @*  <div class="row clearfix">*@
+                        <div class="body">
+                            <div class="card">
+
+                                <div class="body">
+                                    <div class="row clearfix">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Todo title</label>
+                                                <div class="form-line">
+                                                    <input class="form-control" data-val="true" data-val-required="*" id="AddTitle" name="AddTitle" type="text" value="" placeholder="Todo title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Due date</label>
+                                                <div class="form-line">
+                                                    <input class="form-control datetimepicker" id="AddDate" name="AddDate" type="text" value="" placeholder="Due date">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="modal-footer">
+                                        <button id="Add" type="submit" class="btn btn-success">Add</button>
+
+                                        <button type="button" id="CloseAddUser" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section ScriptDatatable{
+
+    <!-- Jquery DataTable Plugin Js -->
+    <!-- Data Table jquery -->
+    <script src="~/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="~/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="~/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <script src="~/UserScripts/Home.js"></script>
+}
+

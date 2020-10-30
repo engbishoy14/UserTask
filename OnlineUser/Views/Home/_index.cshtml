@@ -1,0 +1,70 @@
+﻿@model IEnumerable<OnlineUser.Models.Todo>
+
+<style>
+    body {
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+</style>
+<div class="table-responsive">
+    <table id="indexTable" class="table table-bordered table-striped table-hover dataTable">
+        <thead>
+            <tr>
+                <th>Record Number</th>
+                <th>Todo Title</th>
+
+                <th>Mark Done</th>
+
+
+                <th>Edit</th>
+
+                <th>Delete</th>
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Item in Model)
+            {
+                String style = "";
+                if (Item.IsMark)
+                {
+                    style = "background-color:green;color: white; ";
+                }
+                <tr style="@style">
+                    <td>@Item.ID</td>
+                    <td>@Item.Title</td>
+
+                    <td>
+
+                        @if (Item.IsMark == false)
+                        {
+                            <button class="btn bg-teal waves-effect ActiveUser" value="@Item.ID" title="">Mark Done</button>
+
+
+
+                        }
+                    </td>
+                    <td>
+                        @if (Item.IsMark == false)
+                        {
+                            <button type="button" id="EditUser" value="@Item.ID" data-toggle='modal' data-target='#EditUserModal' class="btn btn-warning waves-effect">Edit </button>
+
+                        }
+                    </td>
+                    <td>
+                        @if (Item.IsMark == false)
+                        {
+                            <button type="button" id="DeleteUser" value="@Item.ID" class="btn btn-danger waves-effect">Delete </button>
+                        }
+                    </td>
+
+
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
++

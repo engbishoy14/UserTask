@@ -1,0 +1,81 @@
+﻿ 
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+ 
+            <div class="card">
+                <div class="header">
+                    <h2>Add New User</h2>
+                </div>
+                <div class="body">
+                    <div class="card">
+                        <div class="body">
+
+                            <div class="row clearfix">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Name</label>
+                                        <div class="form-line">
+                                            <input class="form-control" data-val="true" data-val-required="*" id="Name" name="Name" type="text" value="" placeholder="Name">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row clearfix">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Email</label>
+                                        <div class="form-line">
+                                            <input class="form-control" data-val="true" data-val-required="*" id="email" name="Name" type="email" value="" placeholder="Email">
+                                            @*@Html.TextBox("email", "", new { type = "email"  })*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Password</label>
+                                        <div class="form-line">
+                                            <input class="form-control" data-val="true" data-val-required="*" id="Password" name="Password" type="text" value="" placeholder="Password"   >
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="body">
+                                <button id="Save" type="submit" class="btn btn-primary">Add User</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            
+
+
+
+
+
+@section ScriptDatatable{
+ 
+
+    @{
+        
+            <script src="~/UserScripts/Registeration.js"></script>
+         
+    }
+
+
+
+
+
+}
+
+

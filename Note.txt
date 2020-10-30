@@ -1,0 +1,9 @@
+Use this command to migrate database in package console
+
+EntityFramework6\update-database
+
+this will create database
+
+I attached db script if there is any problem
+
+if there is any problem to run project please tell me
